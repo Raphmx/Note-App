@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+   >
+    <data>
+        <variable
+            name="selectedNote"
+            type="com.israfilkose.noteapp.view.model.NoteModel" />
+
+
+
+        
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#333339"
+        tools:context=".view.DetailsFragment"
+     >
+
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/outlinedTextField"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="80dp"
+            android:backgroundTint="@color/app_color"
+            android:hint="@string/title"
+            android:layout_marginTop="50dp"
+            app:startIconDrawable="@drawable/text_item"
+            app:startIconTint="@color/white"
+            app:counterTextColor="@color/white"
+            app:counterMaxLength="30"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textColorHint="@color/white"
+            app:counterEnabled="true"
+            app:boxCornerRadiusBottomEnd="20dp"
+            app:boxCornerRadiusBottomStart="20dp"
+            app:boxCornerRadiusTopEnd="20dp"
+            app:boxCornerRadiusTopStart="20dp"
+            app:boxStrokeColor="@color/app_color"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp"
+            app:hintTextColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@id/outlinedMessageField"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/title_text_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/app_color"
+                android:maxLength="30"
+                android:inputType="textMultiLine"
+                android:text="@{selectedNote.noteTitle}"
+                android:textAlignment="textStart"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textCursorDrawable="@color/white"
+                android:cursorVisible="true"
+
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/outlinedMessageField"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="300dp"
+            android:layout_marginTop="50dp"
+            app:counterTextColor="@color/white"
+            app:counterMaxLength="300"
+            app:counterEnabled="true"
+            app:startIconDrawable="@drawable/message_item"
+            app:startIconTint="@color/white"
+            android:backgroundTint="@color/app_color"
+            android:hint="@string/message"
+            android:textColorHint="@color/white"
+            app:boxBackgroundColor="@color/app_color"
+            app:boxCornerRadiusBottomEnd="20dp"
+            app:boxCornerRadiusBottomStart="20dp"
+            app:boxCornerRadiusTopEnd="20dp"
+            app:boxCornerRadiusTopStart="20dp"
+            app:boxStrokeColor="@color/app_color"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp"
+            app:hintTextColor="@color/white"
+          app:layout_constraintTop_toBottomOf="@id/outlinedTextField"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+
+
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/message_text_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/app_color"
+                android:inputType="textMultiLine"
+                android:text="@{selectedNote.noteMessage}"
+                android:textAlignment="textStart"
+                android:maxLength="300"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textCursorDrawable="@color/white"
+                app:boxStrokeColor="@color/app_color"
+
+
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+        android:layout_marginTop="180dp"
+            android:src="@drawable/ic_baseline_done_24"
+            app:backgroundTint="#008972"
+            android:layout_gravity="bottom|end"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:tint="@color/white" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
